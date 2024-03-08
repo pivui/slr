@@ -1,0 +1,20 @@
+changelog of the slr Toolbox
+
+slr (0.2)
+  * First release with binaries for Scilab 5.5 and 6.0
+  * builder.sce can now build for both Scilab 5.5 and Scilab 6
+  * slr.start added
+  * changelog.txt added
+  * license.txt added
+  * Missing header added in some *.sci files
+  * Help pages:
+    - slr_prettify() example fixed (wrong $..$)
+    - slr_tabular(): rendered <screen> added
+    - misc. typos fixed
+  * Some 'switch' instead of 'select', and 'end' instead of 'endfunction'
+    prevented to compile for Scilab 5.5: Fixed
+ -- Samuel Gougeon - July 2018
+
+slr (0.1)
+  * Initial version
+ -- Pierre Vuillemin - February 2018

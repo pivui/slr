@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<refentry version="5.0-subset Scilab" xml:id="slr_tabular" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+
+<refnamediv>
+   <refname>slr_tabular</refname>
+   <refpurpose>
+      Returns a formated tabular.
+   </refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+      tab = slr_tabular(title, headers, entries)
+      tab = slr_tabular(title, headers, entries, options)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+      <varlistentry>
+         <term>title </term>
+         <listitem><para>title of the table (string)</para></listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>headers </term>
+         <listitem><para>headers of each column (list or matrix)</para></listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>entries </term>
+         <listitem><para>entries of the table (list or matrix)</para></listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>options </term>
+         <listitem><para>options for the formating (structure)</para></listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>tab </term>
+         <listitem><para>formated tabular (string)</para></listitem>
+      </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>This routine enables to create formated tables.</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <para>
+   <programlisting role="example"><![CDATA[
+       A        = rand(10,3);
+       data     = [mean(A,'c'),max(A,'c'),min(A,'c')];
+       T        = 'Table of results';
+       headers  = list('Mean','Max','Min');
+       opt.float_format = '%.3f';
+       opt.count_lines = %T;
+       tab      = slr_tabular(T, headers, data, opt);
+       mprintf(tab)
+   ]]></programlisting>
+   </para>
+   <screen><![CDATA[
+--> mprintf(tab)
++----------------------------+
+|      Table of results      |
++----------------------------+
+|    | Mean  |  Max  |  Min  |
++----+-------+-------+-------+
+|  1 | 0.360 | 0.561 | 0.211 |
+|  2 | 0.784 | 0.933 | 0.662 |
+|  3 | 0.314 | 0.726 | 0.000 |
+|  4 | 0.280 | 0.330 | 0.199 |
+|  5 | 0.524 | 0.665 | 0.362 |
+|  6 | 0.384 | 0.628 | 0.232 |
+|  7 | 0.549 | 0.850 | 0.231 |
+|  8 | 0.462 | 0.686 | 0.216 |
+|  9 | 0.698 | 0.883 | 0.332 |
+| 10 | 0.438 | 0.653 | 0.068 |
++----------------------------+
+]]></screen>
+</refsection>
+</refentry>

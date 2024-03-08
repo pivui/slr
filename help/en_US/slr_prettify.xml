@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<refentry version="5.0-subset Scilab" xml:id="slr_prettify" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+
+<refnamediv>
+   <refname>slr_prettify</refname>
+   <refpurpose>
+      Attempts to make a handle (e.g. a figure) pretty for articles.
+   </refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+      slr_prettify(h)
+      slr_prettify(h, opt)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+      <varlistentry>
+         <term>h <emphasis>(handle)</emphasis></term>
+         <listitem><para>the thing to prettify</para></listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>opt <emphasis>(struct)</emphasis></term>
+         <listitem><para>the options</para></listitem>
+      </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>Given a handle, this routines attempts:</para><simplelist type='vert' columns='1'>
+          <member><para>
+   to transform the text it finds in latex,
+   </para></member>
+          <member><para>
+   to increase the font sizes,
+   </para></member>
+          <member><para>to increase the thickness of lines.</para></member>
+   </simplelist><para>Default values (of thickness, font sizes, etc.) can be modified by giving    a structure containing the options to modify. The available options are:</para><simplelist type='vert' columns='1'>
+          <member><para>
+   title_font_size (4),
+   </para></member>
+          <member><para>
+   labels_font_size (3),
+   </para></member>
+          <member><para>
+   thicks_font_size (2),
+   </para></member>
+          <member><para>
+   leg_font_size (3),
+   </para></member>
+          <member><para>
+   line_thickness (2),
+   </para></member>
+          <member><para>
+   xstring_font_size (2),
+   </para></member>
+          <member><para>num_format ('').</para></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <para><programlisting role="example"><![CDATA[
+       n = 1000;
+       x = linspace(0,2*%pi,n);
+       plot(x,sin(x),x,cos(x))
+       h = gcf()
+       title('$\text{Figure of }f_1(x)\text{ and }f_2(x)$')
+       xlabel('$x\text{ (rad)}$')
+       ylabel('$y$')
+       legend('$f_1(x) = sin(x)$','$f_2(x) = cos(x)$')
+       opt.line_thickness = 3
+       opt.labels_font_size = 4
+       slr_prettify(h, opt)
+   ]]></programlisting></para>
+</refsection>
+</refentry>

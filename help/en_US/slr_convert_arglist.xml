@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<refentry version="5.0-subset Scilab" xml:id="slr_convert_arglist" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+
+<refnamediv>
+   <refname>slr_convert_arglist</refname>
+   <refpurpose>
+      Creates a structure or mlist from a list of key-value pairs.
+   </refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+      s = slr_convert_arglist(attributes)
+      s = slr_convert_arglist(attributes, mlist_type)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+      <varlistentry>
+         <term>attributes <emphasis>(list)</emphasis></term>
+         <listitem><para>list of attributes with their values</para></listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>mlist_type <emphasis>(string)</emphasis></term>
+         <listitem><para>type of the mlist</para></listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>s <emphasis>(struct or mlist)</emphasis></term>
+         <listitem><para>structured data</para></listitem>
+      </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>Converts a list that consists in a sequence of keys and their    value, i.e. list('attr1', value1, ..., 'attrN',valueN)    to a structure or a mlist.</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <para>Creation of a structure:</para><para><programlisting role="example"><![CDATA[
+          attr_list   = list('attr1', 1, 'attr2', 2)
+          s           = slr_convert_arglist(attr_list)
+          disp(typeof(s))
+          s.attr1
+          s.attr2
+   ]]></programlisting></para><para>Creation of a mlist:</para><para><programlisting role="example"><![CDATA[
+          myType      = 'myType'
+          attr_list   = list('attr1', 1, 'attr2', 2)
+          m           = slr_convert_arglist(attr_list, myType)
+          disp(typeof(m))
+          m.attr1
+          m.attr2
+   ]]></programlisting></para>
+</refsection>
+</refentry>

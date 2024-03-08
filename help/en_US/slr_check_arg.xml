@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<refentry version="5.0-subset Scilab" xml:id="slr_check_arg" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+
+<refnamediv>
+   <refname>slr_check_arg</refname>
+   <refpurpose>
+      Performs some tests on an argument.
+   </refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+      slr_check_arg(arg, arg_name, tests)
+      [ok, msg] = slr_check_arg(arg, arg_name, tests)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+      <varlistentry>
+         <term>arg </term>
+         <listitem><para>the variable to be tested</para></listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>arg_name <emphasis>(string)</emphasis></term>
+         <listitem><para>its name</para></listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>tests <emphasis>(list)</emphasis></term>
+         <listitem><para>a list containing the tests to be performed</para></listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>ok <emphasis>(boolean)</emphasis></term>
+         <listitem><para>answer of the tests</para></listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>msg <emphasis>(string)</emphasis></term>
+         <listitem><para>error message associated with the first failed test.</para></listitem>
+      </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <para><programlisting role="example"><![CDATA[
+       tests = list('type',['constant'])
+       slr_check_arg(1, 'a', tests)
+   ]]></programlisting></para>
+</refsection>
+</refentry>

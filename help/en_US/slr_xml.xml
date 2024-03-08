@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<refentry version="5.0-subset Scilab" xml:id="slr_xml" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+
+<refnamediv>
+   <refname>slr_xml</refname>
+   <refpurpose>
+      Formats text with xml tags.
+   </refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+      xml_str = slr_xml(key, args)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+      <varlistentry>
+         <term>key <emphasis>(string)</emphasis></term>
+         <listitem><para>type of the formatting that must be performed</para></listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>args </term>
+         <listitem><para>content to be formatted</para></listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>xml_str <emphasis>(string)</emphasis></term>
+         <listitem><para>formatted string</para></listitem>
+      </varlistentry>
+   </variablelist>
+</refsection>
+</refentry>

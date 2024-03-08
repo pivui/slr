@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<refentry version="5.0-subset Scilab" xml:id="slr_comments_to_xml" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+
+<refnamediv>
+   <refname>slr_comments_to_xml</refname>
+   <refpurpose>
+      Generates the xml files of help from the head comments of a .sci file or a directory.
+   </refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+      help_xml = slr_comments_to_xml(src)
+      help_xml = slr_comments_to_xml(src, help_dir)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+      <varlistentry>
+         <term>src <emphasis>(string)</emphasis></term>
+         <listitem><para>source file or directory to be processed.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>target <emphasis>(string)</emphasis></term>
+         <listitem><para>directory in which the help file(s) will be placed</para></listitem>
+      </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>This routines generates .xml help files based on the head comments of .sci      files. Note that the head comments can either be made with single line comments      or with block comments.</para><para>In order for this routine to format the .xml file properly, the head comments      should comply with some simple formatting rules.</para><para>In particular, the head comments should be divided in different sections       which content is then specifically formatted. The predefined sections are:      'Syntax', 'Parameters', 'Description', 'Examples', 'See also', 'Used functions',       'Authors' and 'Bibliography'.      To be recognised, these headlines should be alone on a line.</para><para>The content of each section must also comply with some rules to be formatted      adequately:</para><simplelist type='vert' columns='1'>
+            <member><para>a one-line description of the function should be located between the         declaration of the function and the first section.</para></member>
+            <member><para><emphasis role="bold">Syntax</emphasis>: shows examples of call to the routine. There should be one          example of call per line.</para></member>
+            <member><para><emphasis role="bold">Parameters</emphasis>: contains the list of input and output parameters with a          short description.</para><para>         The name of the parameter is separated from its description by a         ":" and the type of the parameter can be put in parenthesis just after          its name.</para><para>         Note that the description of the parameter can extends on several lines.</para></member>
+            <member><para><emphasis role="bold">Description</emphasis>: this section enables to describe more in-depth the         behaviour of the routine.</para><para>         To ease the formatting of the text, some markdown-like features are          supported (see below).</para></member>
+            <member><para><emphasis role="bold">Examples</emphasis>: contains full use cases of the routine. The formatting is         similar to the description section and the code snippet become executable.</para></member>
+            <member><para><emphasis role="bold">See also</emphasis>: enables to provide links to similar functions. Each name must         be on a new line or be separated by a comma.</para></member>
+            <member><para><emphasis role="bold">Bibliography</emphasis>: contains references to the litterature. Each entry must         be separated from the other by a newline or a comma.</para></member>
+            <member><para><emphasis role="bold">Authors</emphasis>: contains a list of the authors. Each author must appear on a         different line.</para></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Markdown-like support</title>
+   <para>A basic markdown support is implemented for the sections description,        examples, and any user defined section.</para><para>It supports:</para><simplelist type='vert' columns='1'>
+             <member><para>
+   <emphasis role="bold">bold expressions</emphasis> are delimited with ** or __
+   </para></member>
+             <member><para>
+   <emphasis>italic expression</emphasis> are delimited with * or _
+   </para></member>
+             <member><para>
+   <literal>literal expressions</literal> are delimited with `
+   </para></member>
+             <member><para>unordered lists are obtained using * at the start of the line. Indentation          is then exploited to determine nested lists.</para><para>          Paragraph in lists are obtained with a single newline. Note that they          must end with a point to be parsed correctly.</para></member>
+             <member><para>
+   code blocks are delimited with ~~~
+   </para></member>
+             <member><para>
+   inline latex equations are delimited with $
+   </para></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <para>Here is an example of the results this function can produce</para><para><programlisting role="example"><![CDATA[
+         target    = './';                            // where the xml file will be created
+         xml_str   = slr_comments_to_xml([], target); // with an empty source, it will apply to itself
+         my_title  = 'slr_comments_to_xml_demo';
+         xmltojar(target, my_title)                   // generate a jar file from the xml
+         ok = add_help_chapter(my_title,target);      // adding the help chapter
+         help();
+   ]]></programlisting></para>
+</refsection>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type='inline'>
+      <member><link linkend="help">help</link></member>
+      <member><link linkend="sci_to_demo">sci_to_demo</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type='vert' columns='1'>
+      <member>Pierre Vuillemin</member>
+   </simplelist>
+</refsection>
+</refentry>

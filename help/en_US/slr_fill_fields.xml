@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<refentry version="5.0-subset Scilab" xml:id="slr_fill_fields" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+
+<refnamediv>
+   <refname>slr_fill_fields</refname>
+   <refpurpose>
+      fills a structure based on a reference structure.
+   </refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+      out_stru = slr_fill_fields(in_stru, ref_stru)
+      out_stru = slr_fill_fields(in_stru, ref_stru, check_fields)
+      out_stru = slr_fill_fields(in_stru, ref_stru, check_fields, tests)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+      <varlistentry>
+         <term>in_stru <emphasis>(st or mlist)</emphasis></term>
+         <listitem><para>variable to be filled</para></listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>ref_stru <emphasis>(st or mlist)</emphasis></term>
+         <listitem><para>reference variable</para></listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>check_fields <emphasis>(boolean)</emphasis></term>
+         <listitem><para>checks whether fields in in_stru are not in ref_stru</para></listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>tests <emphasis>(list)</emphasis></term>
+         <listitem><para>list of tests to perform on some fields</para></listitem>
+      </varlistentry>
+   </variablelist>
+</refsection>
+</refentry>
